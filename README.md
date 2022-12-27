@@ -51,11 +51,11 @@ Obtain `api-id` & `api-hash` as described [here](https://core.telegram.org/api/o
 
 # 🔰 Some Useful Docs
 - [Moving a bot to a local server](https://github.com/tdlib/telegram-bot-api#moving-a-bot-to-a-local-server) or [Moving a bot from one local server to another](https://github.com/tdlib/telegram-bot-api#moving-a-bot-from-one-local-server-to-another):
-  - You must call `logOut` on your bot, to deregister your bot from previous server, before using this server.
+  - You must call [logOut](https://core.telegram.org/bots/api#logout) on your bot, to deregister your bot from previous server, before using this server.
 
 - [Using a Local Bot API Server](https://core.telegram.org/bots/api#using-a-local-bot-api-server) _(`--local`)_:
   - More features will be unlocked & Limits would be removed.
-  - For getFile, files will be downloaded and path would be returned.
+  - For [getFile](https://core.telegram.org/bots/api#getFile), files will be downloaded and path would be returned.
   - You will need to use tools like [NGINX](https://nginx.org/en/) to download those files.
 
 - **More Info:**
