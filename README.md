@@ -1,5 +1,7 @@
-[![](../../actions/workflows/deploy.yml/badge.svg)](../../actions/workflows/deploy.yml)
-[![](../../actions/workflows/submodule-update.yml/badge.svg)](../../actions/workflows/submodule-update.yml)
+<p align="center">
+  [![](../../actions/workflows/deploy.yml/badge.svg)](../../actions/workflows/deploy.yml)
+  [![](../../actions/workflows/submodule-update.yml/badge.svg)](../../actions/workflows/submodule-update.yml)
+</p>
 
 # 🔰 Docker-Hub image
 - It's a pre-built docker image of [tdlib/telegram-bot-api](https://github.com/tdlib/telegram-bot-api).
