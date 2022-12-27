@@ -9,9 +9,9 @@
   <a href="https://github.com/sayyid5416/telegram-bot-api/issues"><img src="https://img.shields.io/github/issues/sayyid5416/telegram-bot-api?colorA=333a44&colorB=red&logo=github&plastic" alt="Issues"></a>
 </p>
 
-# 🔰 Docker-Hub image
+# 🔰 Docker-Hub Image
+- Image is available at [Docker-Hub](https://hub.docker.com/r/sayyid5416/telegram-bot-api).
 - It's a pre-built docker image of [tdlib/telegram-bot-api](https://github.com/tdlib/telegram-bot-api).
-- Image is available at [Docker-Hub](https://hub.docker.com/r/sayyid5416/telegram-bot-api)
 - Different tags are also available, based on the version of [tdlib/telegram-bot-api](https://github.com/tdlib/telegram-bot-api).
 - This Docker image will update automatically, whenever [tdlib/telegram-bot-api](https://github.com/tdlib/telegram-bot-api) is updated.
 
@@ -19,7 +19,7 @@
 <br>
 
 
-# 🔰 Running telegram-bot-api
+# 🔰 Running Telegram-Bot-API
 - There are many ways to run it. Some are:
   - Running using `docker run`.
   - **Deploying** to some hosting service directly.
@@ -28,7 +28,7 @@
 
 - Check [doocker-entrypoint.sh](../../doocker-entrypoint.sh) to get an idea of how to run it.
   - Ex: `telegram-bot-api <Default-Arguments> <Extra-Arguments>`
-  - Default-Arguments: Defined as `DEFAULT_ARGS` in [Dockerfile](../../Dockerfile).
+  - Default-Arguments: Already configured in [Dockerfile](../../Dockerfile) as `DEFAULT_ARGS`.
     - `"--http-port ${PORT1} --dir=${TELEGRAM_WORK_DIR} --temp-dir=${TELEGRAM_TEMP_DIR} --username=${USERNAME} --groupname=${GROUPNAME}"`
     - `TELEGRAM_API_ID` and `TELEGRAM_API_HASH` will be used automatically.
   - Extra-Arguments: Pass these via `EXTRA_ARGS` environment variable _(check [environment variables](#-environment-variables))_.
@@ -37,7 +37,7 @@
 <br>
 
 
-# 🔰 Pre-requisites
+# 🔰 Pre-Requisites
 
 ### 💠 Obtain `TELEGRAM_API_ID` and `TELEGRAM_API_HASH`
 Obtain `api-id` & `api-hash` as described [here](https://core.telegram.org/api/obtaining_api_id) and specify them using `TELEGRAM_API_ID` & `TELEGRAM_API_HASH` environment variables.
@@ -52,7 +52,7 @@ Obtain `api-id` & `api-hash` as described [here](https://core.telegram.org/api/o
   - `TELEGRAM_API_HASH`
 
   ### 💠 Optional
-  - `EXTRA_ARGS`: other args to pass to `telegram-bot-api`. Ex: `--log=<log-file> --http-stat-port=8082 --local`.
+  - `EXTRA_ARGS`: other args to pass to `telegram-bot-api`. Ex: `<ARG1> <ARG2> <ARG3>`.
     ```bash
     --log=<value>
     --filter=<value>
