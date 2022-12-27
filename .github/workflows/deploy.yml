@@ -1,0 +1,90 @@
+name: Docker-Hub Image
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      force_deploy:
+        description: Deploy forcefully
+        type: boolean
+
+env:
+  DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+  username: sayyid5416
+  repo_name: telegram-bot-api
+
+
+jobs:
+
+  pre:
+    name: Pre-requisites
+    runs-on: ubuntu-latest
+    outputs:
+      should_deploy: ${{ steps.deploy_check.outputs.deploy }}
+      current_ver: ${{ steps.versions.outputs.current_ver }}
+    steps:
+
+      - name: Checks for secrets
+        run: |
+          if [[ -z $DOCKERHUB_TOKEN ]]
+            then echo "::error::Required secrets missing: DOCKERHUB_TOKEN."; exit 1
+          fi
+      
+      - name: Check if image needs to be deployed
+        id: deploy_check
+        env:
+          manual_deployment: ${{ inputs.force_deploy }}
+          deploy_via_commit: ${{ startsWith(github.event.head_commit.message, '_deploy_') }}
+          final_deploy: ${{ inputs.force_deploy || startsWith(github.event.head_commit.message, '_deploy_') }}
+        run: |
+          echo "deploy=$final_deploy" >> $GITHUB_OUTPUT
+          echo "#### 💠 New deployment required:   $final_deploy" >> $GITHUB_STEP_SUMMARY
+          if [[ $deploy_via_commit == 'true' ]]; then echo "  - via \"**\_deploy\_**\" message in commit" >> $GITHUB_STEP_SUMMARY; fi
+          if [[ $manual_deployment == true ]]; then echo "  - via \"**manual deployment**\"" >> $GITHUB_STEP_SUMMARY; fi
+      
+      - name: Checkout
+        uses: actions/checkout@main
+        with:
+          submodules: recursive
+          fetch-depth: 0
+      
+      - name: Get telegram-bot-api version
+        id: versions
+        run: |
+          current_ver=$(cat telegram-bot-api/CMakeLists.txt | grep TelegramBotApi | cut -d " " -f3)
+          echo "current_ver=$current_ver" >> $GITHUB_OUTPUT
+          echo "#### 💠 Telegram-Bot-API version:   v$current_ver" >> $GITHUB_STEP_SUMMARY
+
+
+  docker-hub:
+    name: Deploy to Docker-Hub
+    needs: pre
+    if: needs.pre.outputs.should_deploy == 'true' 
+    runs-on: ubuntu-latest
+    environment: 
+      name: Docker Hub
+      url: https://hub.docker.com/r/${{ env.username }}/${{ env.repo_name }}
+    steps:
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@master
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@master
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@master
+        with:
+          username: ${{ env.username }}
+          password: ${{ env.DOCKERHUB_TOKEN }}
+
+      - name: Build and push to Docker Hub
+        uses: docker/build-push-action@master
+        with:
+          push: true
+          platforms: linux/amd64
+          tags: |
+            ${{ env.username }}/${{ env.repo_name }}:latest
+            ${{ env.username }}/${{ env.repo_name }}:${{ needs.pre.outputs.current_ver }}
