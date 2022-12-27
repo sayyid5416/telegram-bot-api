@@ -1,12 +1,12 @@
 <p align="center">
-  <a href="https://hub.docker.com/r/sayyid5416/telegram-bot-api"><img src="https://img.shields.io/docker/v/sayyid5416/telegram-bot-api?colorA=363a4f&colorB=89b4fa&logo=docker&logoColor=fff&sort=semver&plastic" alt="Docker Image Version"></a>
-  <a href="https://hub.docker.com/r/sayyid5416/telegram-bot-api"><img src="https://img.shields.io/docker/image-size/sayyid5416/telegram-bot-api?colorA=363a4f&colorB=94e2d5&label=size&logo=docker&logoColor=fff&sort=semver&plastic" alt="Dcoker Image Size"></a>
-  <a href="https://hub.docker.com/r/sayyid5416/telegram-bot-api"><img src="https://img.shields.io/docker/pulls/sayyid5416/telegram-bot-api?colorA=363a4f&colorB=b4befe&label=pulls&logo=docker&logoColor=fff&sort=semver&plastic" alt="Docker Image Pulls"></a>
+  <a href="https://hub.docker.com/r/sayyid5416/telegram-bot-api"><img src="https://img.shields.io/docker/v/sayyid5416/telegram-bot-api?colorB=lightblue&label=Version&logo=docker&logoColor=white&sort=semver&plastic" alt="Docker Image Version"></a>
+  <a href="https://hub.docker.com/r/sayyid5416/telegram-bot-api"><img src="https://img.shields.io/docker/image-size/sayyid5416/telegram-bot-api?colorB=lightblue&label=Size&logo=docker&logoColor=white&sort=semver&plastic" alt="Dcoker Image Size"></a>
+  <a href="https://hub.docker.com/r/sayyid5416/telegram-bot-api"><img src="https://img.shields.io/docker/pulls/sayyid5416/telegram-bot-api?colorB=lightblue&label=Pulls&logo=docker&logoColor=white&sort=semver&plastic" alt="Docker Image Pulls"></a>
 </p>
 <p align="center">
-  <a href="https://github.com/sayyid5416/telegram-bot-api/actions/workflows/deploy.yml"><img src="https://img.shields.io/github/actions/workflow/status/sayyid5416/telegram-bot-api/build.yml?colorA=363a4f&logo=github&plastic" alt="Build Status"></a>
-  <a href="https://github.com/sayyid5416/telegram-bot-api/actions/workflows/submodule-update.yml"><img src="https://img.shields.io/github/actions/workflow/status/sayyid5416/telegram-bot-api/build.yml?colorA=363a4f&logo=github&plastic" alt="Build Status"></a>
-  <a href="https://github.com/sayyid5416/telegram-bot-api/issues"><img src="https://img.shields.io/github/issues/sayyid5416/telegram-bot-api?colorA=363a4f&colorB=fab387&logo=github&plastic" alt="Issues"></a>
+  <a href="https://github.com/sayyid5416/telegram-bot-api/actions/workflows/deploy.yml"><img src="https://img.shields.io/github/actions/workflow/status/sayyid5416/telegram-bot-api/build.yml?logo=github&plastic" alt="Docker Image Deploy Status"></a>
+  <a href="https://github.com/sayyid5416/telegram-bot-api/actions/workflows/submodule-update.yml"><img src="https://img.shields.io/github/actions/workflow/status/sayyid5416/telegram-bot-api/submodule-update.yml?logo=github&plastic" alt="Submodule Update Status"></a>
+  <a href="https://github.com/sayyid5416/telegram-bot-api/issues"><img src="https://img.shields.io/github/issues/sayyid5416/telegram-bot-api?colorB=green&logo=github&plastic" alt="Issues"></a>
 </p>
 
 # 🔰 Docker-Hub image
