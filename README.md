@@ -1,6 +1,8 @@
 <p align="center">
+
   [![](../../actions/workflows/deploy.yml/badge.svg)](../../actions/workflows/deploy.yml)
   [![](../../actions/workflows/submodule-update.yml/badge.svg)](../../actions/workflows/submodule-update.yml)
+
 </p>
 
 # 🔰 Docker-Hub image
