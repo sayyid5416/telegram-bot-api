@@ -11,8 +11,7 @@
 
 # 🔰 Docker-Hub image
 - It's a pre-built docker image of [tdlib/telegram-bot-api](https://github.com/tdlib/telegram-bot-api).
-- Download Image from [Docker-Hub](https://hub.docker.com/r/sayyid5416/telegram-bot-api), or
-- Use: `FROM sayyid5416/telegram-bot-api:latest` in your Dockerfile.
+- Image is available at [Docker-Hub](https://hub.docker.com/r/sayyid5416/telegram-bot-api)
 - Different tags are also available, based on the version of [tdlib/telegram-bot-api](https://github.com/tdlib/telegram-bot-api).
 - This Docker image will update automatically, whenever [tdlib/telegram-bot-api](https://github.com/tdlib/telegram-bot-api) is updated.
 
@@ -23,15 +22,16 @@
 # 🔰 Running telegram-bot-api
 - There are many ways to run it. Some are:
   - Running using `docker run`.
-  - **Deploying** to some hosting service.
+  - **Deploying** to some hosting service directly.
   - Using it as the **base image** in your docker container.
+    - Ex: `FROM sayyid5416/telegram-bot-api:latest`
 
 - Check [doocker-entrypoint.sh](../../doocker-entrypoint.sh) to get an idea of how to run it.
-  - `telegram-bot-api <Default-Arguments> <Extra-Arguments>`
+  - Ex: `telegram-bot-api <Default-Arguments> <Extra-Arguments>`
   - Default-Arguments: Defined as `DEFAULT_ARGS` in [Dockerfile](../../Dockerfile).
-    - "--http-port ${PORT1} --dir=${TELEGRAM_WORK_DIR} --temp-dir=${TELEGRAM_TEMP_DIR} --username=${USERNAME} --groupname=${GROUPNAME}"
+    - `"--http-port ${PORT1} --dir=${TELEGRAM_WORK_DIR} --temp-dir=${TELEGRAM_TEMP_DIR} --username=${USERNAME} --groupname=${GROUPNAME}"`
     - `TELEGRAM_API_ID` and `TELEGRAM_API_HASH` will be used automatically.
-  - Extra-Arguments: You can pass this as environment variable `EXTRA_ARGS` _(check [environment variables](#-environment-variables))_.
+  - Extra-Arguments: Pass these via `EXTRA_ARGS` environment variable _(check [environment variables](#-environment-variables))_.
 
 
 <br>
