@@ -6,8 +6,13 @@ COPY telegram-bot-api /telegram-bot-api
 ENV CXXFLAGS=""
 
 RUN apk add --no-cache --update \
-  alpine-sdk linux-headers openssl-dev \
-  git zlib-dev gperf cmake
+  alpine-sdk \
+  cmake \
+  git \
+  gperf
+  linux-headers \
+  openssl-dev \
+  zlib-dev \
 
 RUN mkdir -p build \
   && cd build \
@@ -25,7 +30,9 @@ FROM alpine:latest
 WORKDIR /telegram-bot-api
 
 # Install packages
-RUN apk add --no-cache --update openssl libstdc++
+RUN apk add --no-cache --update \
+  libstdc++ \
+  openssl
 
 # Copy files
 COPY --from=build /telegram-bot-api/bin/telegram-bot-api /usr/local/bin/telegram-bot-api
@@ -36,8 +43,8 @@ ENV TELEGRAM_WORK_DIR="/file" \
     TELEGRAM_TEMP_DIR="/tmp" \
     USERNAME="telegram-bot-api" \
     GROUPNAME="telegram-bot-api" \
-    PORT1="8081/tcp" \
-    PORT2="8082/tcp"
+    PORT1="8081" \
+    PORT2="8082"
 ENV DEFAULT_ARGS="--http-port ${PORT1} --dir=${TELEGRAM_WORK_DIR} --temp-dir=${TELEGRAM_TEMP_DIR} --username=${USERNAME} --groupname=${GROUPNAME}"
 
 # Add user > Create directories > Change ownership > Make eecutable
@@ -50,5 +57,5 @@ RUN addgroup -g 777 -S ${GROUPNAME} \
 # Expose Ports
 EXPOSE ${PORT1} ${PORT2}
 
-# Run the program
+# Start the program
 ENTRYPOINT ["/docker-entrypoint.sh"]
