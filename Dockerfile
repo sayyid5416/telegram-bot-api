@@ -9,10 +9,10 @@ RUN apk add --no-cache --update \
   alpine-sdk \
   cmake \
   git \
-  gperf
+  gperf \
   linux-headers \
   openssl-dev \
-  zlib-dev \
+  zlib-dev
 
 RUN mkdir -p build \
   && cd build \
