@@ -3,7 +3,7 @@ set -e
 
 # Telegram-Bot-API command
 ARGS="${DEFAULT_ARGS} ${EXTRA_ARGS}"
-RUN_COMMAND = "telegram-bot-api ${ARGS}"
+RUN_COMMAND="telegram-bot-api ${ARGS}"
 
 # Print Configuration
 echo "[sayyid5416/telegram-bot-api] RUN_COMMAND = ${RUN_COMMAND}"
