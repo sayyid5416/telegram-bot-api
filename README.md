@@ -19,6 +19,15 @@
 <br>
 
 
+# 🔰 Pre-Requisites
+
+### 💠 Obtain API-ID and API-Hash
+Obtain `api-id` & `api-hash` as described [here](https://core.telegram.org/api/obtaining_api_id) and specify them using `TELEGRAM_API_ID` & `TELEGRAM_API_HASH` environment variables.
+
+
+<br>
+
+
 # 🔰 Running Telegram-Bot-API
 - There are many ways to run it. Some are:
   - Running using `docker run`.
@@ -32,15 +41,6 @@
     - `"--http-port ${PORT1} --dir=${TELEGRAM_WORK_DIR} --temp-dir=${TELEGRAM_TEMP_DIR} --username=${USERNAME} --groupname=${GROUPNAME}"`
     - `TELEGRAM_API_ID` and `TELEGRAM_API_HASH` will be used automatically.
   - Extra-Arguments: Pass these via `EXTRA_ARGS` environment variable _(check [environment variables](#-environment-variables))_.
-
-
-<br>
-
-
-# 🔰 Pre-Requisites
-
-### 💠 Obtain API-ID and API-Hash
-Obtain `api-id` & `api-hash` as described [here](https://core.telegram.org/api/obtaining_api_id) and specify them using `TELEGRAM_API_ID` & `TELEGRAM_API_HASH` environment variables.
 
 
 <br>
