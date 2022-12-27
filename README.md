@@ -25,7 +25,7 @@
 # 🔰 Pre-Requisites
 
 ### 💠 Obtain API-ID and API-Hash
-Obtain `api-id` & `api-hash` as described [here](https://core.telegram.org/api/obtaining_api_id) and specify them using `TELEGRAM_API_ID` & `TELEGRAM_API_HASH` environment variables.
+Obtain `api-id` & `api-hash` as described [here](https://core.telegram.org/api/obtaining_api_id) and specify them using `TELEGRAM_API_ID` & `TELEGRAM_API_HASH` [environment variables](#-environment-variables).
 
 
 <br>
@@ -40,10 +40,10 @@ Obtain `api-id` & `api-hash` as described [here](https://core.telegram.org/api/o
 
 - Check [doocker-entrypoint.sh](../../doocker-entrypoint.sh) to get an idea of how to run it.
   - Ex: `telegram-bot-api <Default-Arguments> <Extra-Arguments>`
-  - Default-Arguments: Already configured in [Dockerfile](../../Dockerfile) as `DEFAULT_ARGS`.
+  - **Default-Arguments:** Already configured in [Dockerfile](../../Dockerfile) as `DEFAULT_ARGS`.
     - `--http-port <port> --dir=<work directory> --temp-dir=<temporary directory> --username=<username> --groupname=<groupname>`
     - `TELEGRAM_API_ID` and `TELEGRAM_API_HASH` will be used automatically.
-  - Extra-Arguments: Pass these via `EXTRA_ARGS` environment variable _(check [environment variables](#-environment-variables))_.
+  - **Extra-Arguments:** Pass these via `EXTRA_ARGS` [environment variable](#-environment-variables).
 
 
 <br>
@@ -56,11 +56,11 @@ Obtain `api-id` & `api-hash` as described [here](https://core.telegram.org/api/o
 - [Using a Local Bot API Server](https://core.telegram.org/bots/api#using-a-local-bot-api-server) _(`--local`)_:
   - More features will be unlocked & Limits would be removed.
   - For getFile, files will be downloaded and path would be returned.
-  - You will need to use tools like NGINX to download those files.
+  - You will need to use tools like [NGINX](https://nginx.org/en/) to download those files.
 
 - **More Info:**
   - Your own API endpoint, Ex: `<hostUrl>/bot<token>/getMe`.
-  - The Telegram Bot API server accepts only HTTP requests, so a TLS termination proxy needs to be used to handle remote HTTPS requests.
+  - Telegram Bot API server accepts only HTTP requests, so a TLS termination proxy needs to be used to handle remote HTTPS requests.
 
 
 <br>
