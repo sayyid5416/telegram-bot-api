@@ -55,7 +55,7 @@ Obtain `api-id` & `api-hash` as described [here](https://core.telegram.org/api/o
 
 - [Using a Local Bot API Server](https://core.telegram.org/bots/api#using-a-local-bot-api-server) _(`--local`)_:
   - More features will be unlocked & Limits would be removed.
-  - For [getFile](https://core.telegram.org/bots/api#getFile), files will be downloaded and path would be returned.
+  - For [getFile](https://core.telegram.org/bots/api#getfile), files will be downloaded and path would be returned.
   - You will need to use tools like [NGINX](https://nginx.org/en/) to download those files.
 
 - **More Info:**
