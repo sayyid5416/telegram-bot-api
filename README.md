@@ -4,8 +4,8 @@
   <a href="https://hub.docker.com/r/sayyid5416/telegram-bot-api"><img src="https://img.shields.io/docker/pulls/sayyid5416/telegram-bot-api?colorB=lightblue&label=Pulls&logo=docker&logoColor=white&sort=semver&plastic" alt="Docker Image Pulls"></a>
 </p>
 <p align="center">
-  <a href="https://github.com/sayyid5416/telegram-bot-api/actions/workflows/deploy.yml"><img src="https://img.shields.io/github/actions/workflow/status/sayyid5416/telegram-bot-api/deploy.yml?label=Docker-Hub Image&logo=github&plastic" alt="Docker Image Deploy Status"></a>
-  <a href="https://github.com/sayyid5416/telegram-bot-api/actions/workflows/submodule-update.yml"><img src="https://img.shields.io/github/actions/workflow/status/sayyid5416/telegram-bot-api/submodule-update.yml?label=Update Submodule&logo=github&plastic" alt="Submodule Update Status"></a>
+  <a href="https://github.com/sayyid5416/telegram-bot-api/actions/workflows/deploy.yml"><img src="https://github.com/sayyid5416/telegram-bot-api/actions/workflows/deploy.yml/badge.svg" alt="Docker Image Deploy Status"></a>
+  <a href="https://github.com/sayyid5416/telegram-bot-api/actions/workflows/submodule-update.yml"><img src="https://github.com/sayyid5416/telegram-bot-api/actions/workflows/submodule-update.yml/badge.svg" alt="Submodule Update Status"></a>
   <a href="https://github.com/sayyid5416/telegram-bot-api/issues"><img src="https://img.shields.io/github/issues/sayyid5416/telegram-bot-api?colorB=red&logo=github&plastic" alt="Issues"></a>
 </p>
 
