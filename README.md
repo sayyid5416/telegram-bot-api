@@ -22,21 +22,6 @@
 <br>
 
 
-# 🔰 Some Useful Docs
-- [Usage of telegram-bot-api](https://github.com/tdlib/telegram-bot-api#usage)
-- [Moving a bot to a local server](https://github.com/tdlib/telegram-bot-api#moving-a-bot-to-a-local-server)
-- [Moving a bot from one local server to another](https://github.com/tdlib/telegram-bot-api#moving-a-bot-from-one-local-server-to-another)
-
-- **More Info:**
-  - Your own API endpoint, Ex: `<hostUrl>/bot<token>/getMe`.
-  - More features will be unlocked & Limits would be removed, if used as `--local`. _([read more](https://core.telegram.org/bots/api#using-a-local-bot-api-server))_
-  - You must call `.logOut` on your bot, before using this server _([read more](https://github.com/tdlib/telegram-bot-api/#moving-a-bot-to-a-local-server))_
-  - For getFile, files will be downloaded and path would be returned, if used --local. You will need to use tools like NGINX to download those files.
-
-
-<br>
-
-
 # 🔰 Pre-Requisites
 
 ### 💠 Obtain API-ID and API-Hash
@@ -59,6 +44,20 @@ Obtain `api-id` & `api-hash` as described [here](https://core.telegram.org/api/o
     - `--http-port <port> --dir=<work directory> --temp-dir=<temporary directory> --username=<username> --groupname=<groupname>`
     - `TELEGRAM_API_ID` and `TELEGRAM_API_HASH` will be used automatically.
   - Extra-Arguments: Pass these via `EXTRA_ARGS` environment variable _(check [environment variables](#-environment-variables))_.
+
+
+<br>
+
+
+# 🔰 Some Useful Docs
+- [Moving a bot to a local server](https://github.com/tdlib/telegram-bot-api#moving-a-bot-to-a-local-server) or [Moving a bot from one local server to another](https://github.com/tdlib/telegram-bot-api#moving-a-bot-from-one-local-server-to-another)
+  - You must call `.logOut` on your bot, before using this server
+- [Using a Local Bot API Server](https://core.telegram.org/bots/api#using-a-local-bot-api-server)
+  - More features will be unlocked & Limits would be removed, if used as `--local`.
+- **More Info:**
+  - Your own API endpoint, Ex: `<hostUrl>/bot<token>/getMe`.
+  - For getFile, files will be downloaded and path would be returned, if used --local. You will need to use tools like NGINX to download those files.
+  - The Telegram Bot API server accepts only HTTP requests, so a TLS termination proxy needs to be used to handle remote HTTPS requests
 
 
 <br>
