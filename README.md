@@ -39,7 +39,7 @@
 
 # 🔰 Pre-Requisites
 
-### 💠 Obtain `TELEGRAM_API_ID` and `TELEGRAM_API_HASH`
+### 💠 Obtain API-ID and API-Hash
 Obtain `api-id` & `api-hash` as described [here](https://core.telegram.org/api/obtaining_api_id) and specify them using `TELEGRAM_API_ID` & `TELEGRAM_API_HASH` environment variables.
 
 
@@ -52,7 +52,7 @@ Obtain `api-id` & `api-hash` as described [here](https://core.telegram.org/api/o
   - `TELEGRAM_API_HASH`
 
   ### 💠 Optional
-  - `EXTRA_ARGS`: other args to pass to `telegram-bot-api`. Ex: `<ARG1> <ARG2> <ARG3>`.
+  - `EXTRA_ARGS`: Extra arguments for `telegram-bot-api`. Ex: `<ARG1> <ARG2> <ARG3>`.
     ```bash
     --log=<value>
     --filter=<value>
