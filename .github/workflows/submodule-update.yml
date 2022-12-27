@@ -1,0 +1,44 @@
+name: Update submodule
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"       # Runs at 0:0 AM UTC Everyday
+
+
+jobs:
+
+  telegram_bot_api:
+    name: Update telegram-bot-api
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@main
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Checkout submodule updates
+        id: update_status
+        run: |
+          current_ver=$(cat telegram-bot-api/CMakeLists.txt | grep TelegramBotApi | cut -d " " -f3)
+          returnedValue=$(git submodule update --remote)
+          echo "new_update=$([ -n "$returnedValue" ] && echo "true" || echo "false")" >> $GITHUB_OUTPUT
+          echo "current_ver=$current_ver" >> $GITHUB_OUTPUT
+      
+      - name: Summary
+        run: |
+          echo "#### 👉 Submodule Update found:   ${{ steps.update_status.outputs.new_update == 'true' }}" >> $GITHUB_STEP_SUMMARY
+      
+      - name: Commit submodule updates to main-branch
+        if: steps.update_status.outputs.new_update == 'true'
+        run: |
+          current_ver=${{ steps.update_status.outputs.current_ver }}
+          new_ver=$(cat telegram-bot-api/CMakeLists.txt | grep TelegramBotApi | cut -d " " -f3)
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -am "_deploy_: Updated telegram-bot-api submodules from v${current_ver} to v${new_ver}" || echo "Nothing to commit"
+          git push origin main
+          echo "#### ✔️ Submodule Updates commited from v${current_ver} to v${new_ver} to main branch" >> $GITHUB_STEP_SUMMARY
