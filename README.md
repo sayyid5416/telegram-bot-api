@@ -20,6 +20,23 @@
 <br>
 
 
+# 🔰 Running telegram-bot-api
+- There are many ways to run it. Some are:
+  - Running using `docker run`.
+  - **Deploying** to some hosting service.
+  - Using it as the **base image** in your docker container.
+
+- Check [doocker-entrypoint.sh](../../doocker-entrypoint.sh) to get an idea of how to run it.
+  - `telegram-bot-api <Default-Arguments> <Extra-Arguments>`
+  - Default-Arguments: Defined as `DEFAULT_ARGS` in [Dockerfile](../../Dockerfile).
+    - "--http-port ${PORT1} --dir=${TELEGRAM_WORK_DIR} --temp-dir=${TELEGRAM_TEMP_DIR} --username=${USERNAME} --groupname=${GROUPNAME}"
+    - `TELEGRAM_API_ID` and `TELEGRAM_API_HASH` will be used automatically.
+  - Extra-Arguments: You can pass this as environment variable `EXTRA_ARGS` _(check [environment variables](#-environment-variables))_.
+
+
+<br>
+
+
 # 🔰 Pre-requisites
 
 ### 💠 Obtain `TELEGRAM_API_ID` and `TELEGRAM_API_HASH`
