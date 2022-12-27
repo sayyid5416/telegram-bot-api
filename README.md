@@ -38,9 +38,9 @@ Obtain `api-id` & `api-hash` as described [here](https://core.telegram.org/api/o
   - Using it as the **base image** in your docker container.
     - Ex: `FROM sayyid5416/telegram-bot-api:latest`
 
-- Check [doocker-entrypoint.sh](../../doocker-entrypoint.sh) to get an idea of how to run it.
+- Check [docker-entrypoint.sh](/docker-entrypoint.sh) to get an idea of how to run it.
   - Ex: `telegram-bot-api <Default-Arguments> <Extra-Arguments>`
-  - **Default-Arguments:** Already configured in [Dockerfile](../../Dockerfile) as `DEFAULT_ARGS`.
+  - **Default-Arguments:** Already configured in [Dockerfile](/Dockerfile) as `DEFAULT_ARGS`.
     - `--http-port <port> --dir=<work directory> --temp-dir=<temporary directory> --username=<username> --groupname=<groupname>`
     - `TELEGRAM_API_ID` and `TELEGRAM_API_HASH` will be used automatically.
   - **Extra-Arguments:** Pass these via `EXTRA_ARGS` [environment variable](#-environment-variables).
