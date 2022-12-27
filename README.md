@@ -27,6 +27,12 @@
 - [Moving a bot to a local server](https://github.com/tdlib/telegram-bot-api#moving-a-bot-to-a-local-server)
 - [Moving a bot from one local server to another](https://github.com/tdlib/telegram-bot-api#moving-a-bot-from-one-local-server-to-another)
 
+- **More Info:**
+  - Your own API endpoint, Ex: `<hostUrl>/bot<token>/getMe`.
+  - More features will be unlocked & Limits would be removed, if used as `--local`. _([read more](https://core.telegram.org/bots/api#using-a-local-bot-api-server))_
+  - You must call `.logOut` on your bot, before using this server _([read more](https://github.com/tdlib/telegram-bot-api/#moving-a-bot-to-a-local-server))_
+  - For getFile, files will be downloaded and path would be returned, if used --local. You will need to use tools like NGINX to download those files.
+
 
 <br>
 
