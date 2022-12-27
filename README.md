@@ -52,7 +52,7 @@ Obtain `api-id` & `api-hash` as described [here](https://core.telegram.org/api/o
   - `TELEGRAM_API_HASH`
 
   ### 💠 Optional
-  - `EXTRA_ARGS`: Extra arguments for `telegram-bot-api`. Ex: `<ARG1> <ARG2> <ARG3>`.
+  - `EXTRA_ARGS`: Extra arguments for `telegram-bot-api`. Ex: `<ARG1> <ARG2> <ARG3>`. Available options are:
     ```bash
     --log=<value>
     --filter=<value>
