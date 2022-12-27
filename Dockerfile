@@ -21,6 +21,9 @@ RUN mkdir -p build \
 # BASE image
 FROM alpine:latest
 
+# Working directory
+WORKDIR /telegram-bot-api
+
 # Install packages
 RUN apk add --no-cache --update openssl libstdc++
 
