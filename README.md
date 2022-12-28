@@ -31,6 +31,26 @@ Obtain `api-id` & `api-hash` as described [here](https://core.telegram.org/api/o
 <br>
 
 
+# 🔰 Environment Variables
+  ### 💠 Required
+  - `TELEGRAM_API_ID`
+  - `TELEGRAM_API_HASH`
+
+  ### 💠 Optional
+  - `EXTRA_ARGS`: Extra arguments for `telegram-bot-api`. Ex: `<ARG1> <ARG2> <ARG3>`.
+
+
+<br>
+
+
+# 🔰 Available Ports
+  - `8081/tcp` _(default for telegram-bot-api)_
+  - `8082/tcp`
+
+
+<br>
+
+
 # 🔰 Running Telegram-Bot-API
 - There are many ways to run it. Some are:
   - Running using `docker run`.
@@ -41,9 +61,6 @@ Obtain `api-id` & `api-hash` as described [here](https://core.telegram.org/api/o
 - Check [docker-entrypoint.sh](/docker-entrypoint.sh) to get an idea of how to run it.
   - Ex: `telegram-bot-api <Default-Arguments> <Extra-Arguments>`
   - **Default-Arguments:** Already configured in [Dockerfile](/Dockerfile) as `DEFAULT_ARGS`.
-
-
-
     ```bash
               Argument                          Default value               Description
         --api-id=<TELEGRAM_API_ID>        Sets via ENV `TELEGRAM_API_ID`    For Telegram API access
@@ -87,23 +104,3 @@ Obtain `api-id` & `api-hash` as described [here](https://core.telegram.org/api/o
 - **More Info:**
   - Your own API endpoint, Ex: `<hostUrl>/bot<token>/getMe`.
   - Telegram Bot API server accepts only HTTP requests, so a TLS termination proxy needs to be used to handle remote HTTPS requests.
-
-
-<br>
-
-
-# 🔰 Environment Variables
-  ### 💠 Required
-  - `TELEGRAM_API_ID`
-  - `TELEGRAM_API_HASH`
-
-  ### 💠 Optional
-  - `EXTRA_ARGS`: Extra arguments for `telegram-bot-api`. Ex: `<ARG1> <ARG2> <ARG3>`.
-
-
-<br>
-
-
-# 🔰 Available Ports
-  - `8081/tcp` _(default for telegram-bot-api)_
-  - `8082/tcp`
