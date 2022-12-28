@@ -63,7 +63,7 @@ Obtain `api-id` & `api-hash` as described [here](https://core.telegram.org/api/o
 
   ### 💠 Available Arguments
   - **Default-Arguments:** Already configured in [Dockerfile](/Dockerfile) as `DEFAULT_ARGS`.
-    ```bash
+    ```
               Argument                 Default value                      Description
         --api-id=<value>       Set it via ENV "TELEGRAM_API_ID"      For Telegram API access
         --api-hash=<value>     Set it via ENV "TELEGRAM_API_HASH"    For Telegram API access
@@ -75,7 +75,7 @@ Obtain `api-id` & `api-hash` as described [here](https://core.telegram.org/api/o
     ```
 
   - **Extra-Arguments:** Pass these via `EXTRA_ARGS` [environment variable](#-environment-variables).
-    ```bash
+    ```
               Argument                        Default value                 Description
         --local                                   NA               Allow the Bot API server to serve local requests
     -s, --http-stat-port=<value>                  NA               HTTP statistics port
