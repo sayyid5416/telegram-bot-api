@@ -60,6 +60,7 @@ Obtain `api-id` & `api-hash` as described [here](https://core.telegram.org/api/o
 
 - Check [docker-entrypoint.sh](/docker-entrypoint.sh) to get an idea of how to run it.
   - Ex: `telegram-bot-api <Default-Arguments> <Extra-Arguments>`
+
   - **Default-Arguments:** Already configured in [Dockerfile](/Dockerfile) as `DEFAULT_ARGS`.
     ```bash
               Argument                          Default value               Description
@@ -73,7 +74,6 @@ Obtain `api-id` & `api-hash` as described [here](https://core.telegram.org/api/o
     ```
   - **Extra-Arguments:** Pass these via `EXTRA_ARGS` [environment variable](#-environment-variables).
     ```bash
-    Available arguments:
               Argument                        Default value        Description
         --local                                   NA               Allow the Bot API server to serve local requests
     -s, --http-stat-port=<value>                  NA               HTTP statistics port
