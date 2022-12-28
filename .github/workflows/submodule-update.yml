@@ -29,19 +29,22 @@ jobs:
         run: |
           # Get current version 
           current_version=$(cat telegram-bot-api/CMakeLists.txt | grep TelegramBotApi | cut -d " " -f3)
-          echo "current_version=$current_version" >> $GITHUB_OUTPUT
 
           # Checkout updates
           returnedValue=$(git submodule update --remote)
 
           # Get new version
           updated_version=$(cat telegram-bot-api/CMakeLists.txt | grep TelegramBotApi | cut -d " " -f3)
-          echo "updated_version=$updated_version" >> $GITHUB_OUTPUT
 
           # Checks if submodule was updated
           updated=$([ -n "$returnedValue" ] && echo "true" || echo "false")
+
+          # Set outputs & summary
+          echo "current_version=$current_version" >> $GITHUB_OUTPUT
+          echo "updated_version=$updated_version" >> $GITHUB_OUTPUT
           echo "updated=$updated" >> $GITHUB_OUTPUT
           echo "#### 👉 Submodule Update found:   $updated" >> $GITHUB_STEP_SUMMARY
+
 
 
   commit:
@@ -67,7 +70,7 @@ jobs:
           git config --global user.name "${GITHUB_ACTOR}"
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git add .
-          git commit -am "_deploy_: Updated telegram-bot-api submodules from v${current_version} to v${updated_version}" || echo "Nothing to commit"
+          git commit -am "_deploy_: Updated telegram-bot-api submodule from v${current_version} to v${updated_version}"
           git push origin main
       
       - name: Summary
