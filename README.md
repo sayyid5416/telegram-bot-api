@@ -63,16 +63,16 @@ Obtain `api-id` & `api-hash` as described [here](https://core.telegram.org/api/o
 
   - **Default-Arguments:** Already configured in [Dockerfile](/Dockerfile) as `DEFAULT_ARGS`.
     ```bash
-              Argument                  Default value                   Description
-        --api-id=<value>         Sets via ENV "TELEGRAM_API_ID"   For Telegram API access
-        --api-hash=<value>      Sets via ENV "TELEGRAM_API_HASH"  For Telegram API access
-    -p, --http-port=<value>        default is 8081 (PORT1)        HTTP listening port
-    -d, --dir=<value>             /file (TELEGRAM_WORK_DIR)       Server working directory
-    -t, --temp-dir=<value>        /tmp (TELEGRAM_TEMP_DIR)        Directory for storing HTTP server temporary files
-    -u, --username=<value>       telegram-bot-api (USERNAME)      user name to switch to
-    -g, --groupname=<value>      telegram-bot-api (GROUPNAME)     Effective group name to switch to
+              Argument                 Default value                      Description
+        --api-id=<value>       Set it via ENV "TELEGRAM_API_ID"      For Telegram API access
+        --api-hash=<value>     Set it via ENV "TELEGRAM_API_HASH"    For Telegram API access
+    -p, --http-port=<value>    PORT1 (8081)                          HTTP listening port
+    -d, --dir=<value>          TELEGRAM_WORK_DIR (/file)             Server working directory
+    -t, --temp-dir=<value>     TELEGRAM_TEMP_DIR (/tmp)              Directory for storing HTTP server temporary files
+    -u, --username=<value>     USERNAME (telegram-bot-api)           user name to switch to
+    -g, --groupname=<value>    GROUPNAME (telegram-bot-api)          Effective group name to switch to
     ```
-    
+
   - **Extra-Arguments:** Pass these via `EXTRA_ARGS` [environment variable](#-environment-variables).
     ```bash
               Argument                        Default value                 Description
