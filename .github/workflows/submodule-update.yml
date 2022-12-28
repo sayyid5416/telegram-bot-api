@@ -51,7 +51,7 @@ jobs:
     name: Commit updated submodule
     runs-on: ubuntu-latest
     needs: checks
-    if: needs.checks.outputs.updated == "true"
+    if: needs.checks.outputs.updated == 'true'
     steps:
       
       - name: Checkout current repository
