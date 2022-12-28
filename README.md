@@ -52,15 +52,17 @@ Obtain `api-id` & `api-hash` as described [here](https://core.telegram.org/api/o
 
 
 # 🔰 Running Telegram-Bot-API
-- There are many ways to run it. Some are:
-  - Running using `docker run`.
-  - **Deploying** to some hosting service directly.
-  - Using it as the **base image** in your docker container.
-    - Ex: `FROM sayyid5416/telegram-bot-api:latest`
+  ### 💠 Overview
+  - There are many ways to run it. Some are:
+    - Running using `docker run`.
+    - **Deploying** to some hosting service directly.
+    - Using it as the **base image** in your docker container.
+      - Ex: `FROM sayyid5416/telegram-bot-api:latest`
 
-- Check [docker-entrypoint.sh](/docker-entrypoint.sh) to get an idea of how to run it.
-  - Ex: `telegram-bot-api <Default-Arguments> <Extra-Arguments>`
+  - Check [docker-entrypoint.sh](/docker-entrypoint.sh) to get an idea of how to run it.
+    - Ex: `telegram-bot-api <Default-Arguments> <Extra-Arguments>`
 
+  ### 💠 Available Arguments
   - **Default-Arguments:** Already configured in [Dockerfile](/Dockerfile) as `DEFAULT_ARGS`.
     ```bash
               Argument                 Default value                      Description
