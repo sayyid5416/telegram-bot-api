@@ -31,20 +31,65 @@ Obtain `api-id` & `api-hash` as described [here](https://core.telegram.org/api/o
 <br>
 
 
+# 🔰 Environment Variables
+  ### 💠 Required
+  - `TELEGRAM_API_ID`
+  - `TELEGRAM_API_HASH`
+
+  ### 💠 Optional
+  - `EXTRA_ARGS`: Extra [arguments](#-available-arguments) for `telegram-bot-api`. Ex: `<ARG1> <ARG2> <ARG3>`.
+
+
+<br>
+
+
+# 🔰 Available Ports
+  - `8081/tcp` _(default for telegram-bot-api)_
+  - `8082/tcp`
+
+
+<br>
+
+
 # 🔰 Running Telegram-Bot-API
-- There are many ways to run it. Some are:
-  - Running using `docker run`.
-  - **Deploying** to some hosting service directly.
-  - Using it as the **base image** in your docker container.
-    - Ex: `FROM sayyid5416/telegram-bot-api:latest`
+  ### 💠 Overview
+  - There are many ways to run it. Some are:
+    - Running using `docker run`.
+    - **Deploying** to some hosting service directly.
+    - Using it as the **base image** in your docker container.
+      - Ex: `FROM sayyid5416/telegram-bot-api:latest`
+    - Check [docker-entrypoint.sh](/docker-entrypoint.sh) to get an idea of how to run it.
+      - Ex: `telegram-bot-api <Default-Arguments> <Extra-Arguments>`
 
-- Check [docker-entrypoint.sh](/docker-entrypoint.sh) to get an idea of how to run it.
-  - Ex: `telegram-bot-api <Default-Arguments> <Extra-Arguments>`
+  ### 💠 Available Arguments
   - **Default-Arguments:** Already configured in [Dockerfile](/Dockerfile) as `DEFAULT_ARGS`.
-    - `--http-port <port> --dir=<work directory> --temp-dir=<temporary directory> --username=<username> --groupname=<groupname>`
-    - `TELEGRAM_API_ID` and `TELEGRAM_API_HASH` will be used automatically.
-  - **Extra-Arguments:** Pass these via `EXTRA_ARGS` [environment variable](#-environment-variables).
+    ```bash
+              Argument                 Default value                      Description
+        --api-id=<value>       Set it via ENV "TELEGRAM_API_ID"      For Telegram API access
+        --api-hash=<value>     Set it via ENV "TELEGRAM_API_HASH"    For Telegram API access
+    -p, --http-port=<value>    PORT1 (8081)                          HTTP listening port
+    -d, --dir=<value>          TELEGRAM_WORK_DIR (/file)             Server working directory
+    -t, --temp-dir=<value>     TELEGRAM_TEMP_DIR (/tmp)              Directory for storing HTTP server temporary files
+    -u, --username=<value>     USERNAME (telegram-bot-api)           user name to switch to
+    -g, --groupname=<value>    GROUPNAME (telegram-bot-api)          Effective group name to switch to
+    ```
 
+  - **Extra-Arguments:** Pass these via `EXTRA_ARGS` [environment variable](#-environment-variables).
+    ```bash
+              Argument                        Default value                 Description
+        --local                                   NA               Allow the Bot API server to serve local requests
+    -s, --http-stat-port=<value>                  NA               HTTP statistics port
+        --filter=<value>                          NA               "<remainder>/<modulo>". Allow only bots with 'bot_user_id % modulo == remainder'
+        --max-webhook-connections=<value>         NA               Default value of the maximum webhook connections per bot
+        --http-ip-address=<value>            All IPv4 addresses    local IP address, HTTP connections to which will be accepted
+        --http-stat-ip-address=<value>       All IPv4 addresses    local IP address, HTTP statistics connections to which will be accepted
+    -l, --log=<value>                             NA               Path to the file where the log will be written
+    -v, --verbosity=<value>                       NA               Log verbosity level
+        --memory-verbosity=<value>                3                Memory log verbosity level
+        --log-max-file-size=<value>           2000000000           Maximum size of the log file in bytes before it will be auto-rotated
+    -c, --max-connections=<value>                 NA               Maximum number of open file descriptors
+        --proxy=<value>                           NA               HTTP proxy server for outgoing webhook requests in the format http://host:port
+    ```
 
 <br>
 
@@ -61,33 +106,3 @@ Obtain `api-id` & `api-hash` as described [here](https://core.telegram.org/api/o
 - **More Info:**
   - Your own API endpoint, Ex: `<hostUrl>/bot<token>/getMe`.
   - Telegram Bot API server accepts only HTTP requests, so a TLS termination proxy needs to be used to handle remote HTTPS requests.
-
-
-<br>
-
-
-# 🔰 Environment Variables
-  ### 💠 Required
-  - `TELEGRAM_API_ID`
-  - `TELEGRAM_API_HASH`
-
-  ### 💠 Optional
-  - `EXTRA_ARGS`: Extra arguments for `telegram-bot-api`. Ex: `<ARG1> <ARG2> <ARG3>`. Available options are:
-    ```bash
-    --log=<value>
-    --filter=<value>
-    --max-webhook-connections=<value>
-    --verbosity=<value>
-    --max-connections=<value>
-    --proxy=<value>
-    --http-stat-port=8082
-    --local
-    ```
-
-
-<br>
-
-
-# 🔰 Available Ports
-  - `8081/tcp` _(default for telegram-bot-api)_
-  - `8082/tcp`
