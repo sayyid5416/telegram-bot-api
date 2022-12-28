@@ -41,10 +41,31 @@ Obtain `api-id` & `api-hash` as described [here](https://core.telegram.org/api/o
 - Check [docker-entrypoint.sh](/docker-entrypoint.sh) to get an idea of how to run it.
   - Ex: `telegram-bot-api <Default-Arguments> <Extra-Arguments>`
   - **Default-Arguments:** Already configured in [Dockerfile](/Dockerfile) as `DEFAULT_ARGS`.
-    - `--http-port <port> --dir=<work directory> --temp-dir=<temporary directory> --username=<username> --groupname=<groupname>`
-    - `TELEGRAM_API_ID` and `TELEGRAM_API_HASH` will be used automatically.
+    ```bash
+        --api-id=<TELEGRAM_API_ID>            For Telegram API access                                 (sets automatically via environment variable)
+        --api-hash=<TELEGRAM_API_HASH>        For Telegram API access                                 (sets automatically via environment variable)
+    -p, --http-port=<PORT1>                   HTTP listening port                                     (default is 8081)
+    -d, --dir=<TELEGRAM_WORK_DIR>             server working directory
+    -t, --temp-dir=<TELEGRAM_TEMP_DIR>        directory for storing HTTP server temporary files
+    -u, --username=<USERNAME>                 effective user name to switch to
+    -g, --groupname=<GROUPNAME>               effective group name to switch to
+    ```
   - **Extra-Arguments:** Pass these via `EXTRA_ARGS` [environment variable](#-environment-variables).
-
+    ```bash
+    Available arguments:
+        --local                               Allow the Bot API server to serve local requests
+    -s, --http-stat-port=<value>              HTTP statistics port
+        --filter=<value>                      "<remainder>/<modulo>". Allow only bots with 'bot_user_id % modulo == remainder'
+        --max-webhook-connections=<value>     default value of the maximum webhook connections per bot
+        --http-ip-address=<value>             local IP address, HTTP connections to which will be accepted. By default, connections to any local IPv4 address are accepted
+        --http-stat-ip-address=<value>        local IP address, HTTP statistics connections to which will be accepted. By default, statistics connections to any local IPv4 address are accepted
+    -l, --log=<value>                         path to the file where the log will be written
+    -v, --verbosity=<value>                   log verbosity level
+        --memory-verbosity=<value>            memory log verbosity level; defaults to 3
+        --log-max-file-size=<value>           maximum size of the log file in bytes before it will be auto-rotated (default is 2000000000)
+    -c, --max-connections=<value>             maximum number of open file descriptors
+        --proxy=<value>                       HTTP proxy server for outgoing webhook requests in the format http://host:port
+    ```
 
 <br>
 
@@ -72,17 +93,7 @@ Obtain `api-id` & `api-hash` as described [here](https://core.telegram.org/api/o
   - `TELEGRAM_API_HASH`
 
   ### 💠 Optional
-  - `EXTRA_ARGS`: Extra arguments for `telegram-bot-api`. Ex: `<ARG1> <ARG2> <ARG3>`. Available options are:
-    ```bash
-    --log=<value>
-    --filter=<value>
-    --max-webhook-connections=<value>
-    --verbosity=<value>
-    --max-connections=<value>
-    --proxy=<value>
-    --http-stat-port=8082
-    --local
-    ```
+  - `EXTRA_ARGS`: Extra arguments for `telegram-bot-api`. Ex: `<ARG1> <ARG2> <ARG3>`.
 
 
 <br>
