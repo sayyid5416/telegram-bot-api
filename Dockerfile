@@ -35,13 +35,17 @@ RUN apk add --no-cache --update \
 COPY --from=build /telegram-bot-api/bin/telegram-bot-api /usr/local/bin/telegram-bot-api
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 
+# Build args > Version of telegram-bot-api & docker-image
+ARG TG_VERSION="NA"
+
 # Environment Variables 
 ENV TELEGRAM_WORK_DIR="/file" \
     TELEGRAM_TEMP_DIR="/tmp" \
     MACHINE_USERNAME="telegram-bot-api" \
     MACHINE_GROUPNAME="telegram-bot-api" \
     PORT1="8081" \
-    PORT2="8082"
+    PORT2="8082" \
+    TG_VERSION=${TG_VERSION}
 ENV DEFAULT_ARGS="--http-port ${PORT1} --dir=${TELEGRAM_WORK_DIR} --temp-dir=${TELEGRAM_TEMP_DIR} --username=${MACHINE_USERNAME} --groupname=${MACHINE_GROUPNAME}"
 
 # Add user > Create directories > Change ownership > Make eecutable

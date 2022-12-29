@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       should_deploy: ${{ steps.deploy_check.outputs.deploy }}
-      current_ver: ${{ steps.versions.outputs.current_ver }}
+      current_version: ${{ steps.versions.outputs.current_version }}
     steps:
 
       - name: Checks for secrets
@@ -53,9 +53,9 @@ jobs:
       - name: Get telegram-bot-api version
         id: versions
         run: |
-          current_ver=$(cat telegram-bot-api/CMakeLists.txt | grep TelegramBotApi | cut -d " " -f3)
-          echo "current_ver=$current_ver" >> $GITHUB_OUTPUT
-          echo "#### 💠 Telegram-Bot-API version:   v$current_ver" >> $GITHUB_STEP_SUMMARY
+          current_version=$(cat telegram-bot-api/CMakeLists.txt | grep TelegramBotApi | cut -d " " -f3)
+          echo "current_version=$current_version" >> $GITHUB_OUTPUT
+          echo "#### 💠 Telegram-Bot-API version:   v$current_version" >> $GITHUB_STEP_SUMMARY
 
 
   docker-hub:
@@ -85,6 +85,8 @@ jobs:
         with:
           push: true
           platforms: linux/amd64
+          build-args: |
+            TG_VERSION=${{ needs.pre.outputs.current_version }}
           tags: |
             ${{ env.username }}/${{ env.repo_name }}:latest
-            ${{ env.username }}/${{ env.repo_name }}:${{ needs.pre.outputs.current_ver }}
+            ${{ env.username }}/${{ env.repo_name }}:${{ needs.pre.outputs.current_version }}
