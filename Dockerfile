@@ -42,7 +42,7 @@ ENV TELEGRAM_WORK_DIR="/file" \
     MACHINE_GROUPNAME="telegram-bot-api" \
     PORT1="8081" \
     PORT2="8082"
-ENV DEFAULT_ARGS="-p ${PORT1} -d=${TELEGRAM_WORK_DIR} -t=${TELEGRAM_TEMP_DIR} -u=${MACHINE_USERNAME} -g=${MACHINE_GROUPNAME}"
+ENV DEFAULT_ARGS="--http-port ${PORT1} --dir=${TELEGRAM_WORK_DIR} --temp-dir=${TELEGRAM_TEMP_DIR} --username=${MACHINE_USERNAME} --groupname=${MACHINE_GROUPNAME}"
 
 # Add user > Create directories > Change ownership > Make eecutable
 RUN addgroup -g 777 -S ${MACHINE_GROUPNAME} \
