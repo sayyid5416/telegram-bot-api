@@ -70,8 +70,8 @@ Obtain `api-id` & `api-hash` as described [here](https://core.telegram.org/api/o
     -p, --http-port=<value>    PORT1 (8081)                          HTTP listening port
     -d, --dir=<value>          TELEGRAM_WORK_DIR (/file)             Server working directory
     -t, --temp-dir=<value>     TELEGRAM_TEMP_DIR (/tmp)              Directory for storing HTTP server temporary files
-    -u, --username=<value>     USERNAME (telegram-bot-api)           user name to switch to
-    -g, --groupname=<value>    GROUPNAME (telegram-bot-api)          Effective group name to switch to
+    -u, --username=<value>     MACHINE_USERNAME (telegram-bot-api)           user name to switch to
+    -g, --groupname=<value>    MACHINE_GROUPNAME (telegram-bot-api)          Effective group name to switch to
     ```
 
   - **Extra-Arguments:** Pass these via `EXTRA_ARGS` [environment variable](#-environment-variables).
