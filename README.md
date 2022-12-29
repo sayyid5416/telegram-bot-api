@@ -39,6 +39,20 @@ Obtain `api-id` & `api-hash` as described [here](https://core.telegram.org/api/o
   ### 💠 Optional
   - `EXTRA_ARGS`: Extra [arguments](#-available-arguments) for `telegram-bot-api`. Ex: `<ARG1> <ARG2> <ARG3>`.
 
+  ### 💠 Available build args
+  - `TG_VERSION`: You can set the `TG_VERSION` env using this ARG, on build time.
+
+  ### 💠 ENVs available for your container, if uses this image as your base image
+  - All above envs _(if passed)_
+  - `DEFAULT_ARGS`: Default args for running telegram-bot-api.
+  - `TELEGRAM_WORK_DIR`: _[read here](#-available-arguments)_
+  - `TELEGRAM_TEMP_DIR`: _[read here](#-available-arguments)_
+  - `MACHINE_USERNAME`: _[read here](#-available-arguments)_
+  - `MACHINE_GROUPNAME`: _[read here](#-available-arguments)_
+  - `PORT1`: _[read here](#-available-arguments)_
+  - `PORT2`: _[read here](#-available-arguments)_
+  - `TG_VERSION`: Version of telegram-bot-api and docker-image.
+
 
 <br>
 
@@ -90,6 +104,7 @@ Obtain `api-id` & `api-hash` as described [here](https://core.telegram.org/api/o
     -c, --max-connections=<value>                 NA               Maximum number of open file descriptors
         --proxy=<value>                           NA               HTTP proxy server for outgoing webhook requests in the format http://host:port
     ```
+
 
 <br>
 
