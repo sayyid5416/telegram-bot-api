@@ -4,7 +4,7 @@ run-name: Update "telegram-bot-api" submodule
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * *"       # Runs at 0:0 AM UTC Everyday
+    - cron: "30 18 * * *"       # Runs at 6:30 PM UTC (12:00 AM IST) Everyday
 
 
 jobs:
