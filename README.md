@@ -16,7 +16,7 @@
 - **Auto-Update:** 
   - This Docker image will update automatically.
   - Whenever [tdlib/telegram-bot-api](https://github.com/tdlib/telegram-bot-api) is updated.
-  - Updates are checked everyday 12:00 AM IST (6:30 PM UTC).
+  - Updates are checked everyday 12:00 PM IST (6:30 AM UTC).
   - Add [PAT](https://github.com/settings/tokens/new) _(with repo, user and workflow permissions)_ to `WORKFLOW_PAT` [action secret](../../settings/secrets/actions), if you want to auto-deploy when update is fetched.
 
 <br>

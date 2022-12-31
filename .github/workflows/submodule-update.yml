@@ -5,7 +5,7 @@ run-name: Update "telegram-bot-api" submodule
 on:
   workflow_dispatch:
   schedule:
-    - cron: "30 18 * * *"       # Runs at 6:30 PM UTC (12:00 AM IST) Everyday
+    - cron: "30 6 * * *"       # Runs at 6:30 AM UTC (12:00 PM IST) Everyday
 
 env:
   GITHUB_TOKEN: ${{ secrets.WORKFLOW_PAT }}
