@@ -7,6 +7,8 @@ on:
   schedule:
     - cron: "30 18 * * *"       # Runs at 6:30 PM UTC (12:00 AM IST) Everyday
 
+env:
+  GITHUB_TOKEN: ${{ secrets.WORKFLOW_PAT }}
 
 jobs:
 
@@ -18,6 +20,7 @@ jobs:
       - name: Checkout current repository
         uses: actions/checkout@main
         with:
+          token: ${{ secrets.WORKFLOW_PAT }}
           submodules: recursive
           fetch-depth: 0
 
