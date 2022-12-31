@@ -1,3 +1,4 @@
+## --------------- Workflow to check updates of tdlib/telegram-bot-api submodule --------------- ##
 name: Update submodule
 run-name: Update "telegram-bot-api" submodule
 
@@ -9,8 +10,8 @@ on:
 
 jobs:
 
-  checks:
-    name: Checks
+  update_checks:
+    name: Check Updates
     runs-on: ubuntu-latest
     steps:
       
