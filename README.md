@@ -9,15 +9,13 @@
   <a href="../../issues"><img src="https://img.shields.io/github/issues/sayyid5416/telegram-bot-api?colorA=333a44&colorB=red&logo=github&plastic"></a>
 </p>
 
-# 🔰 Docker-Hub Image
-- Image is available at [Docker-Hub](https://hub.docker.com/r/sayyid5416/telegram-bot-api).
+# 🔰 [Docker-Hub Image](https://hub.docker.com/r/sayyid5416/telegram-bot-api)
 - It's a pre-built docker image of [tdlib/telegram-bot-api](https://github.com/tdlib/telegram-bot-api).
 - Different tags are also available, based on the version of [tdlib/telegram-bot-api](https://github.com/tdlib/telegram-bot-api).
 - **Auto-Update:** 
-  - This Docker image will update automatically.
-  - Whenever [tdlib/telegram-bot-api](https://github.com/tdlib/telegram-bot-api) is updated.
+  - It updates automatically, when [tdlib/telegram-bot-api](https://github.com/tdlib/telegram-bot-api) is updated.
   - Updates are checked everyday 12:00 PM IST (6:30 AM UTC).
-  - Add [PAT](https://github.com/settings/tokens/new) _(with repo, user and workflow permissions)_ to `WORKFLOW_PAT` [action secret](../../settings/secrets/actions), if you want to auto-deploy when update is fetched.
+  - Add [PAT](https://github.com/settings/tokens/new) _(with repo, user and workflow permissions)_ to `WORKFLOW_PAT` [action secret](../../settings/secrets/actions), if you want to auto-deploy to [docker-hub](https://hub.docker.com) when update is fetched. _(applicable only when you fork this repository)_
 
 <br>
 
